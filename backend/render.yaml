@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hallucination-detector-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+    autoDeploy: true
