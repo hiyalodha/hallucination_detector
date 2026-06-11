@@ -11,7 +11,7 @@ HALLUCINATION_THRESHOLD = 40
 class HallucinationScorer:
     def __init__(self):
         self.semantic_model = SentenceTransformer("all-MiniLM-L6-v2")
-        self.nli_model = CrossEncoder("cross-encoder/nli-MiniLM2-L6-H768")
+        self.nli_model = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-2-v2")
 
     def _split_sentences(self, text: str):
         sentences = re.split(r"(?<=[.!?])\s+|(?<=:)\s+|(?<=\n)", text.strip())

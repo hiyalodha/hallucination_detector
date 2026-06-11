@@ -10,7 +10,9 @@ from scorer import HallucinationScorer
 from generator import Generator
 app = FastAPI(title="HallucinationDetector API")
 import os
-
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
     os.getenv("FRONTEND_URL", ""),
